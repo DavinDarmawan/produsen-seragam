@@ -1,0 +1,169 @@
+/* =================================
+   File CSS Kustom untuk Website
+   ================================= */
+
+/* Variabel Warna dan Font Global */
+:root {
+  --bs-primary: #ff6600; /* Warna utama oranye */
+  --bs-primary-rgb: 255, 102, 0;
+}
+
+/* Pengaturan Body Utama */
+body {
+  font-family: "Lato", sans-serif;
+  /* Memberi ruang untuk navbar yang fixed-top */
+  padding-top: 56px;
+}
+
+/* Pengaturan Font untuk Judul, Tombol, dan Navigasi */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand,
+.nav-link,
+.btn {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header Halaman (untuk Kontak, Blog, dll.) */
+.page-header {
+  background-size: cover;
+  padding: 4rem 0;
+  color: white;
+}
+
+/* Ikon pada halaman Kontak */
+.contact-info i {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+/* Efek hover pada kartu portofolio & blog */
+.portfolio-card,
+.blog-card,
+.keunggulan-card {
+  transition: all 0.3s ease;
+}
+
+.portfolio-card:hover,
+.blog-card:hover,
+.keunggulan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.portfolio-card img {
+  transition: transform 0.4s ease;
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Tombol filter di halaman portofolio */
+.filter-btn {
+  border: 1px solid var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: var(--bs-primary);
+  color: white;
+}
+
+/* Garis kiri pada kartu testimoni */
+.testimonial-card {
+  border-left: 5px solid var(--bs-primary);
+}
+
+/* Variabel untuk mengganti warna utama Bootstrap menjadi oranye */
+:root {
+  --bs-primary: #ff6600;
+  --bs-primary-rgb: 255, 102, 0;
+}
+
+/* Styling spesifik untuk beberapa komponen */
+.hero-section {
+  min-height: calc(
+    100vh - 56px
+  ); /* Tinggi hero section dikurangi tinggi navbar */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(images/slide-1.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.testimonial-card {
+  border-left: 5px solid var(--bs-primary);
+}
+
+/* Efek hover halus untuk kartu */
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Styling untuk portfolio card */
+.portfolio-card {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.portfolio-card img {
+  transition: transform 0.4s ease;
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Styling untuk filter button */
+.filter-btn {
+  border: 1px solid var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: var(--bs-primary);
+  color: white;
+}
+
+/* ======================= 
+   6. PORTOFOLIO FILTER BUTTONS
+   ======================= */
+.filter-btn {
+  border: 1px solid var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: var(--bs-primary);
+  color: white;
+}
+
+/* Mengatur tombol filter menjadi vertikal di mobile */
+@media (max-width: 576px) {
+  #filter-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #filter-buttons .btn {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0.5rem;
+  }
+}

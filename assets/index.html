@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Judul dan Deskripsi untuk SEO -->
+    <title>Produsen Seragam</title>
+    <meta
+      name="description"
+      content="Produsen seragam profesional untuk sekolah islam dan perusahaan. Dibuat dengan Bootstrap 5 untuk tampilan modern dan responsif."
+    />
+    <meta 
+      name="keywords" 
+      content="Produsen Seragam, konveksi, pesan seragam, hubungi produsen seragam, konveksi bandung, buat seragam sekolah, order seragam kantor" 
+    />
+
+    <!-- Bootstrap CSS dari CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons dari CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- css animasi -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Vercel Speed Insights Script -->
+    <script>
+      window.si = window.si || function () { (window.si.q = window.si.q || []).push(arguments); };
+    </script>
+    <script src="/_vercel/speed-insights/script.js"></script>
+    
+    <!-- Tepat sebelum </body> -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+    AOS.init(); // <-- Tambahkan baris ini
+    </script>
+
+    <!-- CSS Kustom -->
+    <style>
+      /* Variabel untuk mengganti warna utama Bootstrap menjadi oranye */
+      :root {
+        --bs-primary: #ff6600;
+        --bs-primary-rgb: 255, 102, 0;
+      }
+
+      /* Mengatur font utama dari Google Fonts */
+      body {
+        font-family: "Lato", sans-serif;
+        padding-top: 56px; /* Memberi ruang untuk navbar fixed-top */
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .navbar-brand,
+      .nav-link,
+      .btn {
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Gaya untuk Desktop (Default) */
+.hero-section {
+  min-height: calc(100vh - 56px);
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('images/slide-1.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex; /* Tambahkan ini untuk alignment vertikal */
+  align-items: center; /* Tambahkan ini untuk alignment vertikal */
+  justify-content: center; /* Tambahkan ini untuk alignment horizontal */
+}
+
+/* Media Query untuk Mobile (layar dengan lebar 768px atau kurang) */
+@media (max-width: 768px) {
+  .hero-section {
+    /* Ganti dengan gambar yang sudah dioptimalkan untuk mobile */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url('images/slide-1.jpg');
+  }
+}
+
+      .testimonial-card {
+        border-left: 5px solid var(--bs-primary);
+      }
+
+      /* Efek hover halus untuk kartu */
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        transition: all 0.3s ease-in-out;
+      }
+
+      /* Styling untuk portfolio card */
+      .portfolio-card {
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+
+      .portfolio-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+      }
+
+      .portfolio-card img {
+        transition: transform 0.4s ease;
+      }
+
+      .portfolio-card:hover img {
+        transform: scale(1.05);
+      }
+
+      /* ======================= 6. PORTOFOLIO FILTER BUTTONS ======================= */
+      .filter-btn {
+        border: 1px solid var(--bs-primary);
+        color: var(--bs-primary);
+      }
+
+      .filter-btn.active,
+      .filter-btn:hover {
+        background-color: var(--bs-primary);
+        color: white;
+      }
+
+      /* Mengatur tombol filter menjadi vertikal dan di tengah pada mobile */
+      @media (max-width: 576px) {
+        #filter-buttons {
+          /* Menggunakan Flexbox untuk kontrol penuh */
+          display: flex;
+          flex-direction: column; /* Menyusun tombol ke bawah */
+          align-items: center;   /* Menengahkan tombol secara horizontal */
+        }
+
+        #filter-buttons .btn {
+          /* Memberi jarak antar tombol */
+          margin-top: 0.5rem;
+          /* Menghapus margin samping yang mungkin mengganggu dari kelas .mx-1 */
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+        }
+
+        /* Menghapus margin atas dari tombol pertama agar pas */
+        #filter-buttons .btn:first-child {
+          margin-top: 0;
+        }
+      }
+      
+      
+/* ======================= 
+   4. LAYANAN KAMI (MODEL BARU)
+   ======================= */
+.service-card-new {
+  border: 3px solid #000000; /* Garis tepi ditebalkan menjadi 3px */
+  border-radius: 1.25rem; /* Sudut lebih bulat */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Bayangan yang sangat lembut */
+  transition: all 0.3s ease;
+  overflow: hidden; /* Tambahkan baris ini untuk memotong gambar yang keluar */
+}
+
+.service-card-new:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Bayangan lebih jelas saat hover */
+  border-color: var(--bs-primary); /* Garis tepi menjadi oranye saat hover */
+}
+
+      .testimonial-img {
+      width: 60px;      /* Atur lebar gambar menjadi 60 pixel */
+      height: 60px;     /* Atur tinggi gambar menjadi 60 pixel */
+      object-fit: cover;/* Pastikan gambar tidak gepeng dan terpotong rapi */
+      }
+      
+      /* =================================
+      Latar Belakang Section Testimoni
+      ================================= */
+      .testimonial-bg {
+      /* Ganti URL dengan gambar latar Anda */
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+      url(images/section-bg.jpg) repeat;
+      background-size: auto;
+      color: #ffffff; 
+      
+      /* Mengubah warna teks default di section ini menjadi putih */
+      }
+
+      /* Mengubah warna judul dan deskripsi section menjadi putih agar terbaca */
+      /* Ganti dengan kode ini di style.css */
+      .testimonial-bg .fw-bold {
+        color: #000000 !important; /* Warna oranye untuk judul */
+      }
+
+      .testimonial-bg .text-muted {
+        color: #000000 !important; /* Warna putih pudar untuk deskripsi */
+      }
+
+      /* Mengubah warna judul "Apa Kata Klien Kami?" */
+#testimoni h2 {
+  color: var(--bs-primary) !important; /* Diatur menjadi warna utama (oranye) */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+    </style>
+  </head>
+  <body>
+    <!-- ======================= HEADER / NAVIGASI ======================= -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top"
+    >
+      <div class="container">
+        <a  class="navbar-brand fw-bold" href="index.html" >
+          <!-- Ganti dengan logo Anda atau biarkan teks -->
+          Produsen Seragam
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto fw-semibold">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tentang-kami.html">Tentang Kami</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="portofolio.html">Portofolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kontak.html">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- ======================= HERO SECTION ======================= -->
+      <header
+        class="hero-section d-flex align-items-center text-white text-center" 
+      >
+        <div class="container">
+          <h1 class="display-4 fw-bold mb-3" data-aos="fade-down">
+            Kualitas & Kepercayaan: Solusi Seragam Profesional Anda
+          </h1>
+          <p class="lead my-4 col-md-8 mx-auto " data-aos="fade-down" data-aos-delay="200">
+            Bahan premium, desain modern, dan pengerjaan tepat waktu untuk
+            sekolah dan perusahaan.
+          </p>
+          <a href="portofolio.html" class="btn btn-primary btn-lg mx-2 my-2" data-aos="fade-down" data-aos-delay="200" 
+            >Lihat Portofolio</a
+          >
+          <a href="https://wa.me/+6288385082674" class="btn btn-light btn-lg mx-2 my-2" data-aos="fade-down" data-aos-delay="200" 
+            >Konsultasi Gratis</a
+          >
+        </div>
+      </header>
+
+      <!-- ======================= KEUNGGULAN KAMI ======================= -->
+      <section id="keunggulan" class="py-5">
+        <div class="container" >
+          <div class="text-center mb-5" data-aos="fade-right" data-aos-delay="400">
+            <h2 class="fw-bold">Keunggulan Kami</h2>
+            <p class="text-muted">
+              Alasan mengapa klien memilih kami sebagai mitra mereka.
+            </p>
+          </div>
+          <div class="row g-4 text-center">
+            <!-- Keunggulan 1 -->
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+              <div class="card h-100 border-0 advantage-card">
+                <div class="card-body p-4">
+                  <i class="bi bi-gem fs-1 text-primary"></i>
+                  <h4 class="h5 my-3 fw-bold">Bahan Berkualitas</h4>
+                  <p class="text-muted small">
+                    Kami hanya menggunakan kain premium yang nyaman, awet, dan
+                    tidak mudah pudar.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Keunggulan 2 -->
+            <div class="col-md-6 col-lg-3" data-aos="fade-down" data-aos-delay="400">
+              <div class="card h-100 border-0 advantage-card">
+                <div class="card-body p-4">
+                  <i class="bi bi-palette fs-1 text-primary"></i>
+                  <h4 class="h5 my-3 fw-bold">Desain Eksklusif</h4>
+                  <p class="text-muted small">
+                    Tim desainer kami siap membantu Anda menciptakan seragam
+                    yang unik dan modern.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Keunggulan 3 -->
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+              <div class="card h-100 border-0 advantage-card">
+                <div class="card-body p-4">
+                  <i class="bi bi-clock-history fs-1 text-primary"></i>
+                  <h4 class="h5 my-3 fw-bold">Tepat Waktu</h4>
+                  <p class="text-muted small">
+                    Kami menghargai waktu Anda dengan komitmen produksi sesuai
+                    jadwal yang disepakati.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Keunggulan 4 -->
+            <div class="col-md-6 col-lg-3" data-aos="fade-down" data-aos-delay="400">
+              <div class="card h-100 border-0 advantage-card">
+                <div class="card-body p-4">
+                  <i class="bi bi-person-check fs-1 text-primary"></i>
+                  <h4 class="h5 my-3 fw-bold">Pelayanan Prima</h4>
+                  <p class="text-muted small">
+                    Kepuasan Anda adalah prioritas kami, dari konsultasi awal
+                    hingga purna jual.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+      <!-- ======================= GALERI PORTOFOLIO ======================= -->
+      <section id="portfolio" class="py-5">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold">Lihat Portofolio Projek Kami</h2>
+          </div>
+          <!-- Filter Buttons -->
+          <div class="row mb-4">
+            <div class="col text-center" id="filter-buttons">
+              <button class="btn filter-btn active mx-1" data-filter="semua">
+                Semua
+              </button>
+              <button class="btn filter-btn mx-1" data-filter="sekolah">
+                Seragam Sekolah
+              </button>
+              <button class="btn filter-btn mx-1" data-filter="perusahaan">
+                Seragam Perusahaan
+              </button>
+            </div>
+          </div>
+
+          <!-- Portfolio Grid -->
+          <div class="row g-4">
+            <!-- Item 1 (Sekolah) -->
+            <div
+              class="col-lg-4 col-md-6 portfolio-item"
+              data-category="sekolah"
+            >
+              <div class="card h-100 border-0 shadow-sm portfolio-card">
+                <img
+                  src="images/port-3.jpg"
+                  class="card-img-top"
+                  alt="Baju Islami"
+                />
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Baju Islami</h5>
+                  <p class="card-text text-muted">
+                    Baju harian bahan katun premium yang nyaman dan menyerap
+                    keringat.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Item 2 (Perusahaan) -->
+            <div
+              class="col-lg-4 col-md-6 portfolio-item"
+              data-category="perusahaan"
+            >
+              <div class="card h-100 border-0 shadow-sm portfolio-card">
+                <img
+                  src="images/port-2.jpg"
+                  class="card-img-top"
+                  alt="Rompi islami"
+                />
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Rompi islami</h5>
+                  <p class="card-text text-muted">
+                    Rompi dengan bahan American drill dan bordir logo
+                    komputer presisi tinggi.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Item 3 (Sekolah) -->
+            <div
+              class="col-lg-4 col-md-6 portfolio-item"
+              data-category="sekolah"
+            >
+              <div class="card h-100 border-0 shadow-sm portfolio-card">
+                <img
+                  src="images/port-4.jpg"
+                  class="card-img-top"
+                  alt="baju terbaru"
+                />
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">
+                    baju terbaru
+                  </h5>
+                  <p class="card-text text-muted">
+                    Setelan training dengan bahan dry-fit yang ringan dan
+                    fleksibel untuk aktivitas olahraga.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======================= LAYANAN UNGGULAN ======================= -->
+      <section id="layanan" class="py-5 bg-light">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold">Layanan Kami</h2>
+            <p class="text-muted">
+              Fokus kami adalah memberikan yang terbaik untuk kebutuhan seragam
+              Anda.
+            </p>
+          </div>
+          <div class="row g-4">
+            <!-- Layanan 1 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="card text-center h-100 shadow-sm border-0 card-hover">
+                <div class="card-body p-4">
+                  <i class="bi bi-person-workspace fs-1 text-primary"></i>
+                  <h3 class="card-title h4 my-3">Seragam Sekolah</h3>
+                  <p class="card-text text-muted">
+                    Desain modern dan bahan nyaman untuk seragam harian, batik,
+                    hingga olahraga.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Layanan 2 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="card text-center h-100 shadow-sm border-0 card-hover">
+                <div class="card-body p-4">
+                  <i class="bi bi-building fs-1 text-primary"></i>
+                  <h3 class="card-title h4 my-3">Seragam Korporat</h3>
+                  <p class="card-text text-muted">
+                    Kemeja dan polo shirt yang merepresentasikan citra
+                    profesional perusahaan Anda.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Layanan 3 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="card text-center h-100 shadow-sm border-0 card-hover">
+                <div class="card-body p-4">
+                  <i class="bi bi-palette fs-1 text-primary"></i>
+                  <h3 class="card-title h4 my-3">Desain Kustom</h3>
+                  <p class="card-text text-muted">
+                    Wujudkan seragam eksklusif dengan bantuan tim desainer kami
+                    dari konsep hingga produksi.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ======================= LAYANAN KAMI (MODEL BARU) ======================= -->
+      <section id="layanan" class="py-5">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- Kolom Kiri: Judul dan Deskripsi -->
+            <div class="col-lg-5" data-aos="fade-right">
+              <p class="display-6 text-primary fw-bold">LAYANAN KAMI</p>
+              <h3 class="display-2 fw-bold mb-4" style="line-height: 1.2">
+                Solusi Terbaik untuk Kebutuhan Pakaian Custom Anda!
+              </h3>
+              <p class="display-7 fw-bold" style="line-height: 1.2">
+                Kami adalah penyedia jasa konveksi terpercaya di Bandung, Tim kami terdiri dari para lulusan STT Tekstil yang pernah berkiprah di industri tektil maupun garmen selama puluhan tahun dan Tim kami siap
+                membantu Anda dalam pembuatan seragam, pakaian custom, dan
+                keperluan lainnya dalam jumlah besar.
+              </p>
+              <a href="portofolio.html" class="btn btn-warning fw-bold mt-4">Explore More</a>
+            </div>
+
+            <!-- Kolom Kanan: Kartu Layanan (Staggered Layout) -->
+            <div class="col-lg-7" data-aos="fade-left">
+              <div class="row">
+                <!-- Kolom Kartu Pertama -->
+                <div class="col-md-6 ">
+                  <!-- Kartu 1 -->
+                  <div class="card service-card-new mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-body text-center p-5 card h-100 border-0 shadow-sm portfolio-card">
+                      <img src="images/team2.jpg" alt="Ikon Seragam" class="mb-3"/>
+                      <h5 class="card-title fw-bold">Seragam Perusahaan</h5>
+                      <p class="card-text text-muted small">
+                        Untuk segala kebutuhan seragam perusahaan, sekolah, dan komunitas.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Kartu 3 -->
+                  <div class="card service-card-new" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-body text-center p-5 card h-100 border-0 shadow-sm portfolio-card">
+                      <img src="images/team3.jpg" alt="Ikon Aksesoris" class="mb-3"/>
+                      <h5 class="card-title fw-bold">Tas</h5>
+                      <p class="card-text text-muted small">
+                        Layanan produksi topi, tas, dan keperluan pelengkap
+                        lainnya untuk brand Anda.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Kolom Kartu Kedua (Digeser ke Bawah) -->
+                <div class="col-md-6 mt-4 mt-lg-5">
+                  <!-- Kartu 2 -->
+                  <div class="card service-card-new mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-body text-center p-5 card h-100 border-0 shadow-sm portfolio-card">
+                      <img src="images/team1.jpg" alt="Ikon Jaket" class="mb-3"/>
+                      <h5 class="card-title fw-bold">Seragam Sekolah</h5>
+                      <p class="card-text text-muted small">
+                        Pembuatan jaket, sweater, ataupun hoodie dengan berbagai
+                        pilihan bahan.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Kartu 4 -->
+                  <div class="card service-card-new" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-body text-center p-5 card h-100 border-0 shadow-sm portfolio-card">
+                       <img src="images/team4.jpg" alt="Ikon Kaos" class="mb-3"/>
+                      <h5 class="card-title fw-bold">Sock & Shoes</h5>
+                      <p class="card-text text-muted small">
+                        Produksi kaos untuk event atau merchandise dengan
+                        kualitas sablon terbaik.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= TESTIMONI ======================= -->
+      <section id="testimoni" class="py-5 testimonial-bg">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold testimonial-color text-primary">Apa Kata Klien Kami?</h2>
+          </div>
+          <div class="row g-4">
+            <!-- Testimoni 1 -->
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300">
+              <div class="card testimonial-card h-100 shadow-sm border-0 p-3">
+                <div class="card-body">
+                  <p class="fst-italic">
+                    "Desain seragam yang mereka tawarkan tidak hanya mencerminkan identitas perusahaan kami dengan sempurna, tetapi juga memberikan kenyamanan dan kualitas yang tinggi bagi seluruh tim kami. Proses produksi yang cepat dan efisien, ditambah dengan perhatian mereka terhadap detail dan kepuasan pelanggan, benar-benar membuat pengalaman ini sangat menyenangkan."
+                  </p>
+                  <div class="d-flex align-items-center mt-4">
+                    <img
+                      src="images/testi-1.jpg"
+                      class="rounded-circle testimonial-img"
+                      alt="Bapak Abdullah"
+                    />
+                    <div class="ms-3">
+                      <h5 class="mb-0 fw-bold">Ahdhiana</h5>
+                      <small class="text-muted"
+                        >Purjam Owner</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Testimoni 2 -->
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+              <div class="card testimonial-card h-100 shadow-sm border-0 p-3">
+                <div class="card-body">
+                  <p class="fst-italic">
+                    "Yang paling mengesankan adalah ketepatan waktu pengiriman yang selalu tepat sesuai jadwal, tanpa mengorbankan kualitas. Tim kami merasa bangga mengenakan seragam yang tidak hanya terlihat stylish tetapi juga mencerminkan identitas perusahaan kami dengan sempurna. Kami sangat merekomendasikan produsenseragam.id kepada siapa saja yang mencari solusi seragam yang berkualitas dan terpercaya."
+                  </p>
+                  <div class="d-flex align-items-center mt-4">
+                    <img
+                      src="images/testi-2.jpg"
+                      class="rounded-circle testimonial-img"
+                      alt="Bapak Abdullah"
+                    />
+                    <div class="ms-3">
+                      <h5 class="mb-0 fw-bold">Nurlela</h5>
+                      <small class="text-muted"
+                        >Khafa Aparel Owner</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Testimoni 3 -->
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300">
+              <div class="card testimonial-card h-100 shadow-sm border-0 p-3">
+                <div class="card-body">
+                  <p class="fst-italic">
+                    "Sejak awal proses, tim produsenseragam.id menunjukkan komitmen yang tinggi terhadap kualitas dan detail. Mereka tidak hanya memahami kebutuhan kami, tetapi juga menawarkan solusi desain yang inovatif dan sesuai dengan visi kami. Kualitas bahan yang digunakan sangat baik, memberikan kenyamanan yang optimal bagi siswa kami sepanjang hari."
+                  </p>
+                  <div class="d-flex align-items-center mt-4">
+                    <img
+                      src="images/testi-3.jpg"
+                      class="rounded-circle testimonial-img"
+                      alt="Bapak Abdullah"
+                    />
+                    <div class="ms-3">
+                      <h5 class="mb-0 fw-bold">Pak Khaerudin</h5>
+                      <small class="text-muted"
+                        >SDIT Bina Umat Buru Maluku</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Testimoni 4 -->
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+              <div class="card testimonial-card h-100 shadow-sm border-0 p-3">
+                <div class="card-body">
+                  <p class="fst-italic">
+                    "Seragam baru kami telah mendapatkan sambutan positif dari siswa, orang tua, dan staf pengajar. Kami merasa bangga melihat siswa kami mengenakan seragam yang tidak hanya nyaman tetapi juga memperkuat identitas dan semangat kebersamaan di sekolah kami."
+                  </p>
+                  <div class="d-flex align-items-center mt-4">
+                    <img
+                      src="images/testi-4.jpg"
+                      class="rounded-circle testimonial-img"
+                      alt="Bapak Abdullah"
+                    />
+                    <div class="ms-3">
+                      <h5 class="mb-0 fw-bold">Kepala Sekolah</h5>
+                      <small class="text-muted"
+                        >SDIT Tunas Bangsa</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Testimoni 5 -->
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300">
+              <div class="card testimonial-card h-100 shadow-sm border-0 p-3">
+                <div class="card-body">
+                  <p class="fst-italic">
+                    "Sebagai pimpinan Elfatih, kami sangat puas terhadap hasil produksi dari produsenseragam.id. Mereka mengutamakan pelayanan terhadap konsumen sejak dari awal proses komunikasi sampai pengiriman seragam. Kami sangat senang telah memilih produsenseragam.id untuk pembuatan seragam sekolah kami."
+                  </p>
+                  <div class="d-flex align-items-center mt-4">
+                    <img
+                      src="images/testi-5.jpg"
+                      class="rounded-circle testimonial-img"
+                      alt="Bapak Abdullah"
+                    />
+                    <div class="ms-3">
+                      <h5 class="mb-0 fw-bold">Kepala Sekolah</h5>
+                      <small class="text-muted"
+                        >ELFATIH Kota Serang</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Testimoni 6 -->
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+              <div class="card testimonial-card h-100 shadow-sm border-0 p-3">
+                <div class="card-body">
+                  <p class="fst-italic">
+                    "Hasil seragam dari produsenseragam.id menggunakan bahan kain yang bagus, karena cukup tahan lama untuk menahan aktivitas sehari-hari di sekolah. Juga punya kualitas jahitan rapi dan kuat. Kami sangat merekomendasikan mereka kepada sekolah-sekolah lain yang mencari solusi seragam yang berkualitas tinggi, dengan jahitan yang terjamin, bahan yang nyaman, dan harga yang bersaing."
+                  </p>
+                  <div class="d-flex align-items-center mt-4">
+                    <img
+                      src="images/testi-6.jpg"
+                      class="rounded-circle testimonial-img"
+                      alt="Ibu Sarah Lidia"
+                    />
+                    <div class="ms-3">
+                      <h5 class="mb-0 fw-bold">Kepala Sekolah</h5>
+                      <small class="text-muted"
+                        >Nurul Ilmi Banyuasin SUMSEL</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= DAFTAR ARTIKEL BLOG ======================= -->
+      <section id="blog" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+            <h2 class="fw-bold">Blog & Artikel</h2>
+          </div>
+          <div class="row g-4">
+            <!-- Artikel 1 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 border-0 shadow-sm blog-card">
+                <img
+                  src="images/slide-4.jpg"
+                  class="card-img-top"
+                  alt="Tips Memilih Bahan"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title fw-bold">
+                    8 Tips Memilih Bahan Seragam yang Nyaman untuk Anak Sekolah
+                  </h5>
+                  <p class="card-text text-muted small">14 September 2025</p>
+                  <p class="card-text text-muted">
+                    Memilih bahan yang tepat adalah kunci. Berikut adalah lima
+                    tips untuk memastikan seragam anak nyaman dipakai...
+                  </p>
+                  <a href="artikel-tips-bahan.html" class="btn btn-primary mt-auto align-self-start"
+                    >Baca Selengkapnya</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Artikel 2 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 border-0 shadow-sm blog-card">
+                <img
+                  src="images/blog-2.png"
+                  class="card-img-top"
+                  alt="Tren Warna Seragam"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title fw-bold">
+                    Tren Warna Seragam Kantor Tahun 2025: Dari Earth Tone hingga
+                    Bold
+                  </h5>
+                  <p class="card-text text-muted small">10 September 2025</p>
+                  <p class="card-text text-muted">
+                    Warna seragam dapat meningkatkan citra perusahaan. Tahun
+                    2025 diprediksi akan didominasi oleh warna-warna...
+                  </p>
+                  <a href="artikel-tren-warna.html" class="btn btn-primary mt-auto align-self-start"
+                    >Baca Selengkapnya</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Artikel 3 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 border-0 shadow-sm blog-card">
+                <img
+                  src="images/blog-3.png"
+                  class="card-img-top"
+                  alt="Cara Merawat Seragam"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title fw-bold">
+                    Cara Merawat Seragam agar Awet dan Tidak Cepat Pudar
+                  </h5>
+                  <p class="card-text text-muted small">5 September 2025</p>
+                  <p class="card-text text-muted">
+                    Perawatan yang benar akan membuat seragam Anda tahan lebih
+                    lama. Ikuti langkah-langkah mudah berikut ini...
+                  </p>
+                  <a href="artikel-cara-merawat.html" class="btn btn-primary mt-auto align-self-start"
+                    >Baca Selengkapnya</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Anda bisa menambahkan lebih banyak artikel di sini dengan format yang sama -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= CALL TO ACTION (CTA) ======================= -->
+      <section class="py-5 bg-primary text-white text-center">
+        <div class="container">
+          <h2 class="fw-bold">Siap Wujudkan Seragam Impian Anda?</h2>
+          <p class="lead my-3">
+            Diskusikan kebutuhan seragam Anda dengan tim kami. Dapatkan
+            penawaran terbaik hari ini!
+          </p>
+          <a href="https://wa.me/+6288385082674" class="btn btn-light btn-lg"
+            >Hubungi Kami Sekarang</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer class="bg-dark text-white pt-5 pb-4">
+      <div class="container text-center text-md-start">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h5 class="text-uppercase fw-bold mb-4 text-primary">
+              Produsen Seragam
+            </h5>
+            <p>
+              Produsen seragam terpercaya yang mengutamakan kualitas, ketepatan
+              waktu, dan kepuasan pelanggan.
+            </p>
+          </div>
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h5 class="text-uppercase fw-bold mb-4 text-primary">Navigasi</h5>
+            <p>
+              <a href="#!" class="text-white text-decoration-none">Beranda</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white text-decoration-none"
+                >Tentang Kami</a
+              >
+            </p>
+            <p>
+              <a href="#!" class="text-white text-decoration-none"
+                >Portofolio</a
+              >
+            </p>
+            <p><a href="#!" class="text-white text-decoration-none">Blog</a></p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h5 class="text-uppercase fw-bold mb-4 text-primary">Kontak</h5>
+            <!-- alamat -->
+            <p>
+              <i class="bi bi-geo-alt-fill me-3"></i>Komplek Marakesh Bandung, Indonesia
+            </p>
+            <!-- email -->
+            <p>
+              <i class="bi bi-envelope-fill me-3"></i>produsenseragam.id@gmail.com
+            </p>
+            <!-- whatsapp -->
+            <p><i class="bi bi-whatsapp me-3"></i>+62 838-5082-674</p>
+            <!-- instagram -->
+            <p><i class="bi bi-instagram me-3"></i>@produsenseragam.id</p>
+          </div>
+        </div>
+        <hr />
+        <div class="text-center py-2">
+          <p>
+            Copyright &copy; <span id="year"></span> Produsen Seragam. All
+            Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript Bundle with Popper dari CDN -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    
+    <!-- Tepat sebelum </body> -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          duration: 800, // Durasi animasi dalam milidetik
+          once: true // Animasi hanya terjadi sekali
+      });
+
+      // Script untuk tahun di footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+      // Script sederhana untuk menampilkan tahun sekarang di footer secara otomatis
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Logika untuk filter portofolio
+      const filterButtons = document.querySelectorAll("#filter-buttons .btn");
+      const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // Hapus kelas 'active' dari semua tombol
+          filterButtons.forEach((btn) => btn.classList.remove("active"));
+          // Tambahkan kelas 'active' ke tombol yang diklik
+          button.classList.add("active");
+
+          const filterValue = button.getAttribute("data-filter");
+
+          portfolioItems.forEach((item) => {
+            const itemCategory = item.getAttribute("data-category");
+            if (filterValue === "semua" || filterValue === itemCategory) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
