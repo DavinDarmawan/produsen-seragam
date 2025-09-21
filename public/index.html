@@ -71,24 +71,24 @@
       }
 
       /* Gaya untuk Desktop (Default) */
-.hero-section {
-  min-height: calc(100vh - 56px);
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('assets/images/slide-1.jpg') no-repeat center center;
-  background-size: cover;
-  display: flex; /* Tambahkan ini untuk alignment vertikal */
-  align-items: center; /* Tambahkan ini untuk alignment vertikal */
-  justify-content: center; /* Tambahkan ini untuk alignment horizontal */
-}
+      .hero-section {
+      min-height: calc(100vh - 56px);
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url('assets/images/slide-1.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex; /* Tambahkan ini untuk alignment vertikal */
+      align-items: center; /* Tambahkan ini untuk alignment vertikal */
+      justify-content: center; /* Tambahkan ini untuk alignment horizontal */
+      }
 
-/* Media Query untuk Mobile (layar dengan lebar 768px atau kurang) */
-@media (max-width: 768px) {
-  .hero-section {
-    /* Ganti dengan gambar yang sudah dioptimalkan untuk mobile */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url('assets/images/slide-1.jpg');
-  }
-}
+      /* Media Query untuk Mobile (layar dengan lebar 768px atau kurang) */
+      @media (max-width: 768px) {
+        .hero-section {
+        /* Ganti dengan gambar yang sudah dioptimalkan untuk mobile */
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('assets/images/slide-1.jpg');
+        }
+      }
 
       .testimonial-card {
         border-left: 5px solid var(--bs-primary);
@@ -156,27 +156,27 @@
       }
       
       
-/* ======================= 
-   4. LAYANAN KAMI (MODEL BARU)
-   ======================= */
-.service-card-new {
-  border: 3px solid #000000; /* Garis tepi ditebalkan menjadi 3px */
-  border-radius: 1.25rem; /* Sudut lebih bulat */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Bayangan yang sangat lembut */
-  transition: all 0.3s ease;
-  overflow: hidden; /* Tambahkan baris ini untuk memotong gambar yang keluar */
-}
+      /* ======================= 
+      4. LAYANAN KAMI (MODEL BARU)
+      ======================= */
+      .service-card-new {
+        border: 3px solid #000000; /* Garis tepi ditebalkan menjadi 3px */
+        border-radius: 1.25rem; /* Sudut lebih bulat */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Bayangan yang sangat lembut */
+        transition: all 0.3s ease;
+        overflow: hidden; /* Tambahkan baris ini untuk memotong gambar yang keluar */
+      }
 
-.service-card-new:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Bayangan lebih jelas saat hover */
-  border-color: var(--bs-primary); /* Garis tepi menjadi oranye saat hover */
-}
+      .service-card-new:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Bayangan lebih jelas saat hover */
+        border-color: var(--bs-primary); /* Garis tepi menjadi oranye saat hover */
+      }
 
       .testimonial-img {
-      width: 60px;      /* Atur lebar gambar menjadi 60 pixel */
-      height: 60px;     /* Atur tinggi gambar menjadi 60 pixel */
-      object-fit: cover;/* Pastikan gambar tidak gepeng dan terpotong rapi */
+        width: 60px;      /* Atur lebar gambar menjadi 60 pixel */
+        height: 60px;     /* Atur tinggi gambar menjadi 60 pixel */
+        object-fit: cover;/* Pastikan gambar tidak gepeng dan terpotong rapi */
       }
       
       /* =================================
@@ -184,10 +184,10 @@
       ================================= */
       .testimonial-bg {
       /* Ganti URL dengan gambar latar Anda */
-      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-      url(assets/images/section-bg.jpg) repeat;
-      background-size: auto;
-      color: #ffffff; 
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+        url(assets/images/section-bg.jpg) repeat;
+        background-size: auto;
+        color: #ffffff; 
       
       /* Mengubah warna teks default di section ini menjadi putih */
       }
@@ -203,10 +203,25 @@
       }
 
       /* Mengubah warna judul "Apa Kata Klien Kami?" */
-#testimoni h2 {
-  color: var(--bs-primary) !important; /* Diatur menjadi warna utama (oranye) */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
+      #testimoni h2 {
+        color: var(--bs-primary) !important; /* Diatur menjadi warna utama (oranye) */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      }
+
+      /* ======================= 
+      10. TOMBOL KUSTOM BARU
+       ======================= */
+      .btn-orange {
+        background-color: #ff6600;
+        border-color: #ff6600;
+        color: white;
+      }
+
+      .btn-orange:hover {
+        background-color: #e65c00; /* Warna sedikit lebih gelap saat disentuh */
+        border-color: #e65c00;
+        color: white;
+      }
 
     </style>
   </head>
@@ -266,7 +281,7 @@
             Bahan premium, desain modern, dan pengerjaan tepat waktu untuk
             sekolah dan perusahaan.
           </p>
-          <a href="portofolio.html" class="btn btn-primary btn-lg mx-2 my-2" data-aos="fade-down" data-aos-delay="200" 
+          <a href="portofolio.html" class="btn btn-orange btn-lg mx-2 my-2" data-aos="fade-down" data-aos-delay="200" 
             >Lihat Portofolio</a
           >
           <a href="https://wa.me/+6288385082674" class="btn btn-light btn-lg mx-2 my-2" data-aos="fade-down" data-aos-delay="200" 
@@ -513,7 +528,7 @@
                 membantu Anda dalam pembuatan seragam, pakaian custom, dan
                 keperluan lainnya dalam jumlah besar.
               </p>
-              <a href="portofolio.html" class="btn btn-warning fw-bold mt-4">Explore More</a>
+              <a href="portofolio.html" class="btn btn-orange fw-bold mt-4">Explore More</a>
             </div>
 
             <!-- Kolom Kanan: Kartu Layanan (Staggered Layout) -->
@@ -747,7 +762,7 @@
                     Memilih bahan yang tepat adalah kunci. Berikut adalah lima
                     tips untuk memastikan seragam anak nyaman dipakai...
                   </p>
-                  <a href="artikel-tips-bahan.html" class="btn btn-primary mt-auto align-self-start"
+                  <a href="artikel-tips-bahan.html" class="btn btn-orange mt-auto align-self-start"
                     >Baca Selengkapnya</a
                   >
                 </div>
@@ -771,7 +786,7 @@
                     Warna seragam dapat meningkatkan citra perusahaan. Tahun
                     2025 diprediksi akan didominasi oleh warna-warna...
                   </p>
-                  <a href="artikel-tren-warna.html" class="btn btn-primary mt-auto align-self-start"
+                  <a href="artikel-tren-warna.html" class="btn btn-orange mt-auto align-self-start"
                     >Baca Selengkapnya</a
                   >
                 </div>
@@ -794,7 +809,7 @@
                     Perawatan yang benar akan membuat seragam Anda tahan lebih
                     lama. Ikuti langkah-langkah mudah berikut ini...
                   </p>
-                  <a href="artikel-cara-merawat.html" class="btn btn-primary mt-auto align-self-start"
+                  <a href="artikel-cara-merawat.html" class="btn btn-orange mt-auto align-self-start"
                     >Baca Selengkapnya</a
                   >
                 </div>
