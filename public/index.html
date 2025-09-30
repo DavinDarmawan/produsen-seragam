@@ -129,36 +129,49 @@
       }
 
       /* ======================= 
-   5. PORTOFOLIO FILTER BUTTONS (portofolio.html)
+   5. PORTOFOLIO BARU (index.html)
    ======================= */
-.filter-btn {
-  border: 1px solid var(--bs-primary);
-  color: var(--bs-primary);
+.portfolio-card-v2 {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 1.25rem; /* Sudut bulat */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  cursor: default; /* Menghilangkan ikon tangan (pointer) */
 }
 
-.filter-btn.active,
-.filter-btn:hover {
-  background-color: var(--bs-primary);
+.portfolio-card-v2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-card-v2:hover img {
+  transform: scale(1.05); /* Efek zoom saat disentuh */
+}
+
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
   color: white;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent); /* Gradasi gelap dari bawah */
+  transition: all 0.3s ease;
 }
 
-/* Mengatur tombol filter menjadi vertikal dan di tengah pada mobile */
-@media (max-width: 576px) {
-  #filter-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.portfolio-overlay h5 {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
 
-  #filter-buttons .btn {
-    margin-top: 0.5rem;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  #filter-buttons .btn:first-child {
-    margin-top: 0;
-  }
+.portfolio-overlay p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
       
       
