@@ -128,40 +128,38 @@
         transform: scale(1.05);
       }
 
-      /* ======================= 6. PORTOFOLIO FILTER BUTTONS ======================= */
-      .filter-btn {
-        border: 1px solid var(--bs-primary);
-        color: var(--bs-primary);
-      }
+      /* ======================= 
+   5. PORTOFOLIO FILTER BUTTONS (portofolio.html)
+   ======================= */
+.filter-btn {
+  border: 1px solid var(--bs-primary);
+  color: var(--bs-primary);
+}
 
-      .filter-btn.active,
-      .filter-btn:hover {
-        background-color: var(--bs-primary);
-        color: white;
-      }
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: var(--bs-primary);
+  color: white;
+}
 
-      /* Mengatur tombol filter menjadi vertikal dan di tengah pada mobile */
-      @media (max-width: 576px) {
-        #filter-buttons {
-          /* Menggunakan Flexbox untuk kontrol penuh */
-          display: flex;
-          flex-direction: column; /* Menyusun tombol ke bawah */
-          align-items: center;   /* Menengahkan tombol secara horizontal */
-        }
+/* Mengatur tombol filter menjadi vertikal dan di tengah pada mobile */
+@media (max-width: 576px) {
+  #filter-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-        #filter-buttons .btn {
-          /* Memberi jarak antar tombol */
-          margin-top: 0.5rem;
-          /* Menghapus margin samping yang mungkin mengganggu dari kelas .mx-1 */
-          margin-left: 0 !important;
-          margin-right: 0 !important;
-        }
+  #filter-buttons .btn {
+    margin-top: 0.5rem;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 
-        /* Menghapus margin atas dari tombol pertama agar pas */
-        #filter-buttons .btn:first-child {
-          margin-top: 0;
-        }
-      }
+  #filter-buttons .btn:first-child {
+    margin-top: 0;
+  }
+}
       
       
       /* ======================= 
@@ -241,6 +239,7 @@
       <div class="container">
         <a  class="navbar-brand fw-bold" href="index.html" >
           <!-- Ganti dengan logo Anda atau biarkan teks -->
+           <img src="assets/images/favicon.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
           Produsen Seragam
         </a>
         <button
@@ -474,91 +473,53 @@
         </div>
       </section>
 
-      <!-- ======================= GALERI PORTOFOLIO ======================= -->
-      <section id="portfolio" class="py-5">
+      <!-- ======================= PORTOFOLIO BARU ======================= -->
+      <section id="projek-unggulan" class="py-5 bg-light">
         <div class="container">
-          <div class="text-center mb-5">
-            <h2 class="fw-bold text-primary">Lihat Portofolio Projek Kami</h2>
-          </div>
-
-          <!-- Portfolio Grid -->
-          <div class="row g-4">
-            <!-- Item 1 (Perusahaan) -->
-            <div
-              class="col-lg-4 col-md-6 portfolio-item"
-              data-category="perusahaan"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div class="card h-100 border-0 shadow-sm portfolio-card">
-                <img
-                  src="assets/images/tes-1.png"
-                  class="card-img-top"
-                  alt="Rompi islami"
-                />
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">Rompi Lapangan Multifungsi "Explorer"</h5>
-                  <p class="card-text text-muted">
-                    Rompi tangguh dan fungsional dari bahan American drill yang
-                    kokoh. Dirancang dengan banyak saku serbaguna dan bordir
-                    logo presisi tinggi. Ideal untuk aktivitas komunitas dan
-                    kegiatan lapangan.
-                  </p>
-                </div>
-              </div>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Lihat Portofolio Projek Kami</h2>
+                <p class="text-muted">Projek Unggulan</p>
             </div>
-            <!-- Item 2 (Perusahaan) -->
-            <div
-              class="col-lg-4 col-md-6 portfolio-item"
-              data-category="perusahaan"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div class="card h-100 border-0 shadow-sm portfolio-card">
-                <img
-                  src="assets/images/tes-2.png"
-                  class="card-img-top"
-                  alt="Rompi islami"
-                />
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">Rompi Lapangan Multifungsi "Explorer"</h5>
-                  <p class="card-text text-muted">
-                    Rompi tangguh dan fungsional dari bahan American drill yang
-                    kokoh. Dirancang dengan banyak saku serbaguna dan bordir
-                    logo presisi tinggi. Ideal untuk aktivitas komunitas dan
-                    kegiatan lapangan.
-                  </p>
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <a href="portofolio.html#kemeja" class="portfolio-card-v2" data-aos="zoom-in">
+                        <img src="assets/images/port-2.jpg" alt="Kemeja Bordir Custom" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <h5>Kemeja Bordir Custom</h5>
+                            <p>Kemeja Bordir Custom</p>
+                        </div>
+                    </a>
                 </div>
-              </div>
-            </div>
-            <!-- Item 3 (Perusahaan) -->
-            <div
-              class="col-lg-4 col-md-6 portfolio-item"
-              data-category="perusahaan"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div class="card h-100 border-0 shadow-sm portfolio-card">
-                <img
-                  src="assets/images/tes-3.png"
-                  class="card-img-top"
-                  alt="Rompi islami"
-                />
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">Rompi Lapangan Multifungsi "Explorer"</h5>
-                  <p class="card-text text-muted">
-                    Rompi tangguh dan fungsional dari bahan American drill yang
-                    kokoh. Dirancang dengan banyak saku serbaguna dan bordir
-                    logo presisi tinggi. Ideal untuk aktivitas komunitas dan
-                    kegiatan lapangan.
-                  </p>
+                <div class="col-lg-5">
+                    <a href="portofolio.html#jaket" class="portfolio-card-v2" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="assets/images/tes-6.png" alt="Jaket Bomber Custom" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <h5>Jaket Bomber Custom</h5>
+                            <p>Jaket Bomber Custom</p>
+                        </div>
+                    </a>
                 </div>
-              </div>
+                <div class="col-lg-4">
+                    <a href="portofolio.html#kaos" class="portfolio-card-v2" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="assets/images/port-3.jpg" alt="Kaos Custom" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <h5>Kaos Custom</h5>
+                            <p>Kaos Custom</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-8">
+                    <a href="portofolio.html#kemeja" class="portfolio-card-v2" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="assets/images/tes-1.png" alt="Blazer Wanita Custom" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <h5>Blazer Wanita Custom</h5>
+                            <p>Blazer Wanita Custom</p>
+                        </div>
+                    </a>
+                </div>
             </div>
-          </div>
         </div>
       </section>
-    </main>
 
       
 
