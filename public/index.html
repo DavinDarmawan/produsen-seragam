@@ -264,15 +264,42 @@
             </li>
             <!-- ITEM PORTOFOLIO DIUBAH MENJADI DROPDOWN -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 Produk Portofolio
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="portofolio.html#kemeja">Kemeja Seragam Kerja Bordir</a></li>
-                <li><a class="dropdown-item" href="portofolio.html#industri">Seragam Industri</a></li>
-                <li><a class="dropdown-item" href="portofolio.html#jaket">Jaket Custom</a></li>
-                <li><a class="dropdown-item" href="portofolio.html#kaos">Kaos Custom</a></li>
-                <li><a class="dropdown-item" href="portofolio.html#olahraga">Kaos Olahraga Custom</a></li>
+                <li>
+                  <a class="dropdown-item" href="portofolio.html#kemeja"
+                    >Kemeja Seragam Kerja Bordir</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="portofolio.html#industri"
+                    >Seragam Industri</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="portofolio.html#jaket"
+                    >Jaket Custom</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="portofolio.html#kaos"
+                    >Kaos Custom</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="portofolio.html#olahraga"
+                    >Kaos Olahraga Custom</a
+                  >
+                </li>
               </ul>
             </li>
             <li class="nav-item">
@@ -905,28 +932,30 @@
       document.getElementById("year").textContent = new Date().getFullYear();
 
       // Logika untuk filter portofolio
-      const filterButtons = document.querySelectorAll("#filter-buttons .btn");
       const portfolioItems = document.querySelectorAll(".portfolio-item");
 
-      filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          // Hapus kelas 'active' dari semua tombol
-          filterButtons.forEach((btn) => btn.classList.remove("active"));
-          // Tambahkan kelas 'active' ke tombol yang diklik
-          button.classList.add("active");
-
-          const filterValue = button.getAttribute("data-filter");
-
-          portfolioItems.forEach((item) => {
-            const itemCategory = item.getAttribute("data-category");
-            if (filterValue === "semua" || filterValue === itemCategory) {
-              item.style.display = "block";
-            } else {
-              item.style.display = "none";
-            }
-          });
+      function filterItems(filterValue) {
+        portfolioItems.forEach((item) => {
+          const itemCategory = item.getAttribute("data-category");
+          if (filterValue === "semua" || !filterValue || filterValue === itemCategory) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
         });
-      });
+      }
+      
+      // Otomatis filter saat halaman dimuat atau saat hash berubah
+      function handleHashChange() {
+        const hash = window.location.hash.substring(1);
+        filterItems(hash || 'semua');
+      }
+
+      // Jalankan filter saat halaman pertama kali dimuat
+      document.addEventListener('DOMContentLoaded', handleHashChange);
+      
+      // Jalankan filter setiap kali hash di URL berubah (misalnya saat klik link dropdown)
+      window.addEventListener('hashchange', handleHashChange);
     </script>
   </body>
 </html>

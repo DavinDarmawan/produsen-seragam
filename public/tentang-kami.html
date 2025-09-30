@@ -459,6 +459,36 @@
         once: true, // Animasi hanya terjadi sekali
       });
 
+      // Logika untuk filter portofolio
+      const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+      function filterItems(filterValue) {
+        portfolioItems.forEach((item) => {
+          const itemCategory = item.getAttribute("data-category");
+          if (
+            filterValue === "semua" ||
+            !filterValue ||
+            filterValue === itemCategory
+          ) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      }
+
+      // Otomatis filter saat halaman dimuat atau saat hash berubah
+      function handleHashChange() {
+        const hash = window.location.hash.substring(1);
+        filterItems(hash || "semua");
+      }
+
+      // Jalankan filter saat halaman pertama kali dimuat
+      document.addEventListener("DOMContentLoaded", handleHashChange);
+
+      // Jalankan filter setiap kali hash di URL berubah (misalnya saat klik link dropdown)
+      window.addEventListener("hashchange", handleHashChange);
+
       // Script untuk tahun di footer
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
