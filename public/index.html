@@ -109,71 +109,58 @@
         transition: all 0.3s ease-in-out;
       }
 
-      /* Styling untuk portfolio card */
-      .portfolio-card {
-        transition: all 0.3s ease;
-        overflow: hidden;
-      }
+      /* CSS Kustom untuk Kartu Portofolio */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
 
-      .portfolio-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-      }
+        .portfolio-card {
+            display: block; /* Changed to block for h-100 to work correctly */
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%; /* Make card fill the column height */
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
 
-      .portfolio-card img {
-        transition: transform 0.4s ease;
-      }
+        .portfolio-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Changed back to 'cover' to ensure the image fills the card */
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        
+        .portfolio-card:hover img {
+            transform: scale(1.05);
+        }
 
-      .portfolio-card:hover img {
-        transform: scale(1.05);
-      }
+        .portfolio-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem;
+            color: white;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+        }
 
-      /* ======================= 
-   5. PORTOFOLIO BARU (index.html)
-   ======================= */
-.portfolio-card-v2 {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  border-radius: 1.25rem; /* Sudut bulat */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  height: 100%;
-  cursor: default; /* Menghilangkan ikon tangan (pointer) */
-}
+        .portfolio-card-content h5 {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
 
-.portfolio-card-v2 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.portfolio-card-v2:hover img {
-  transform: scale(1.05); /* Efek zoom saat disentuh */
-}
-
-.portfolio-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 1.5rem;
-  color: white;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent); /* Gradasi gelap dari bawah */
-  transition: all 0.3s ease;
-}
-
-.portfolio-overlay h5 {
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-}
-
-.portfolio-overlay p {
-  margin-bottom: 0;
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-      
+        .portfolio-card-content p {
+            margin: 0;
+            opacity: 0.9;
+        }
       
       /* ======================= 
       4. LAYANAN KAMI (MODEL BARU)
@@ -487,54 +474,76 @@
       </section>
 
       <!-- ======================= PORTOFOLIO BARU ======================= -->
-      <section id="projek-unggulan" class="py-5 bg-light">
+    <section id="projek-unggulan" class="py-5">
         <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
+            <!-- Title changed to left-aligned and subtitle removed -->
+            <div class="text-start mb-5" data-aos="fade-up">
                 <h2 class="fw-bold">Lihat Portofolio Projek Kami</h2>
-                <p class="text-muted">Projek Unggulan</p>
             </div>
+            
+            <!-- New Bootstrap Grid Layout -->
             <div class="row g-4">
+                <!-- Kemeja Bordir (Large) -->
                 <div class="col-lg-7">
-                    <a href="portofolio.html#kemeja" class="portfolio-card-v2" data-aos="zoom-in">
-                        <img src="assets/images/port-2.jpg" alt="Kemeja Bordir Custom" class="img-fluid">
-                        <div class="portfolio-overlay">
+                    <a href="portofolio.html#kemeja" class="portfolio-card" data-aos="zoom-in" style="min-height: 400px;">
+                        <img src="assets/images/tes-1.png" alt="Kemeja Bordir Custom">
+                        <div class="portfolio-card-content">
                             <h5>Kemeja Bordir Custom</h5>
                             <p>Kemeja Bordir Custom</p>
                         </div>
                     </a>
                 </div>
+                <!-- Jaket Bomber (Small) -->
                 <div class="col-lg-5">
-                    <a href="portofolio.html#jaket" class="portfolio-card-v2" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="assets/images/tes-6.png" alt="Jaket Bomber Custom" class="img-fluid">
-                        <div class="portfolio-overlay">
+                     <a href="portofolio.html#jaket-bomber" class="portfolio-card" data-aos="zoom-in" data-aos-delay="100" style="min-height: 400px;">
+                        <img src="assets/images/tes-2.png" alt="Jaket Bomber Custom">
+                        <div class="portfolio-card-content">
                             <h5>Jaket Bomber Custom</h5>
                             <p>Jaket Bomber Custom</p>
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-4">
-                    <a href="portofolio.html#kaos" class="portfolio-card-v2" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="assets/images/port-3.jpg" alt="Kaos Custom" class="img-fluid">
-                        <div class="portfolio-overlay">
-                            <h5>Kaos Custom</h5>
-                            <p>Kaos Custom</p>
-                        </div>
-                    </a>
-                </div>
+            </div>
+
+            <div class="row g-4 mt-2">
+                
+                <!-- New Re-arranged Bootstrap Grid Layout -->
+            <div class="row g-4">
+                <!-- Left Column: Main Image -->
                 <div class="col-lg-8">
-                    <a href="portofolio.html#kemeja" class="portfolio-card-v2" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="assets/images/tes-1.png" alt="Blazer Wanita Custom" class="img-fluid">
-                        <div class="portfolio-overlay">
+                    <a href="portofolio.html#blazer" class="portfolio-card" data-aos="zoom-in" style="min-height: 532px;">
+                        <img src="assets/images/tes-3.png" alt="Blazer Wanita Custom">
+                        <div class="portfolio-card-content">
                             <h5>Blazer Wanita Custom</h5>
                             <p>Blazer Wanita Custom</p>
                         </div>
                     </a>
                 </div>
-            </div>
-        </div>
-      </section>
 
-      
+                <!-- Right Column: Stacked Images -->
+                <div class="col-lg-4">
+                    <div class="vstack gap-4">
+                        <a href="portofolio.html#jaket" class="portfolio-card" data-aos="zoom-in" data-aos-delay="100" style="min-height: 250px;">
+                            <img src="assets/images/tes-12.png" alt="Jaket Baseball">
+                            <div class="portfolio-card-content">
+                                <h5>Jaket Baseball</h5>
+                                <p>Jaket Baseball</p>
+                            </div>
+                        </a>
+                        <a href="portofolio.html#seragam" class="portfolio-card" data-aos="zoom-in" data-aos-delay="200" style="min-height: 250px;">
+                            <img src="assets/images/tes-13.png" alt="Seragam Industri Custom">
+                            <div class="portfolio-card-content">
+                                <h5>Seragam Industri Custom</h5>
+                                <p>Seragam Industri Custom</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </section>
 
       <!-- ======================= TESTIMONI ======================= -->
       <section id="testimoni" class="py-5 testimonial-bg">
