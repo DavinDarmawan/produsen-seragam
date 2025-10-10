@@ -40,6 +40,12 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
 
+    <!-- css button wa -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
     <!-- css animasi -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
@@ -84,6 +90,40 @@
       .advantage-card:hover i {
         transform: scale(1.1);
         transition: all 0.3s ease;
+      }
+
+      /* Styling untuk Tombol WhatsApp Floating */
+      .whatsapp-floating-button {
+        /* Posisi */
+        position: fixed; /* Membuat elemen tetap di layar */
+        bottom: 25px; /* Jarak dari bawah layar */
+        right: 25px; /* Jarak dari kanan layar */
+        z-index: 1000; /* Memastikan tombol selalu di atas elemen lain */
+
+        /* Tampilan Tombol */
+        background-color: #25d366; /* Warna hijau khas WhatsApp */
+        color: white; /* Warna teks dan ikon */
+        padding: 10px 18px;
+        border-radius: 50px; /* Membuat sudut menjadi bulat */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan agar terlihat 'melayang' */
+        text-decoration: none; /* Menghapus garis bawah pada link */
+        font-family: "Arial", sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+
+        /* Layout Ikon dan Teks */
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Jarak antara ikon dan teks */
+
+        /* Efek Transisi */
+        transition: transform 0.2s ease-in-out;
+      }
+
+      /* Efek saat kursor mouse di atas tombol */
+      .whatsapp-floating-button:hover {
+        transform: scale(1.05); /* Sedikit memperbesar tombol */
+        background-color: #128c7e; /* Warna hijau lebih gelap saat hover */
       }
     </style>
   </head>
@@ -177,6 +217,16 @@
         </div>
       </div>
     </nav>
+
+    <!-- button wa -->
+    <a
+      href="https://wa.me/628385082674?text=Halo,%20saya%20tertarik%20dengan%20produk%20Anda."
+      class="whatsapp-floating-button"
+      target="_blank"
+    >
+      <i class="fab fa-whatsapp"></i>
+      <span>Chat Admin</span>
+    </a>
 
     <main>
       <!-- ======================= PAGE HEADER ======================= -->
