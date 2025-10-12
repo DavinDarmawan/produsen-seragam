@@ -92,14 +92,6 @@
       justify-content: center; /* Tambahkan ini untuk alignment horizontal */
       }
 
-      /* Media Query untuk Mobile (layar dengan lebar 768px atau kurang) */
-      @media (max-width: 768px) {
-        .hero-section {
-        /* Ganti dengan gambar yang sudah dioptimalkan untuk mobile */
-        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('assets/images/slide-1.jpg');
-        }
-      }
 
       .testimonial-card {
         border-left: 5px solid var(--bs-primary);
@@ -246,13 +238,13 @@
 
         /* Tampilan Tombol */
         background-color: #25D366; /* Warna hijau khas WhatsApp */
-        color: white; /* Warna teks dan ikon */
+        color: #ffffff; /* Warna teks dan ikon */
         padding: 10px 18px;
         border-radius: 50px; /* Membuat sudut menjadi bulat */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan agar terlihat 'melayang' */
         text-decoration: none; /* Menghapus garis bawah pada link */
         font-family: 'Arial', sans-serif;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: bold;
 
         /* Layout Ikon dan Teks */
@@ -267,6 +259,7 @@
       /* Efek saat kursor mouse di atas tombol */
       .whatsapp-floating-button:hover {
         transform: scale(1.05); /* Sedikit memperbesar tombol */
+        color: #ffffff;
         background-color: #ff6600; /* Warna hijau lebih gelap saat hover */
       }
 
