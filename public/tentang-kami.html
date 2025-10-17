@@ -125,6 +125,82 @@
         transform: scale(1.05); /* Sedikit memperbesar tombol */
         background-color: #ff6600; /* Warna hijau lebih gelap saat hover */
       }
+
+      /* costum icon */
+      .bi-custom-icon::before {
+        display: inline-block;
+        content: "";
+        vertical-align: -0.125em;
+
+        /* GANTI BAGIAN INI */
+        background-image: url("assets/images/tee-shirt.png"); /* Arahkan ke file PNG Anda */
+
+        /* Sesuaikan properti background lainnya */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */
+
+        /* Ukuran box untuk ikon tetap diperlukan */
+        width: 3rem;
+        height: 3rem;
+      }
+
+      /* costum icon */
+      .bi-clock-icon::before {
+        display: inline-block;
+        content: "";
+        vertical-align: -0.125em;
+
+        /* GANTI BAGIAN INI */
+        background-image: url("assets/images/clock.png"); /* Arahkan ke file PNG Anda */
+
+        /* Sesuaikan properti background lainnya */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */
+
+        /* Ukuran box untuk ikon tetap diperlukan */
+        width: 3rem;
+        height: 3rem;
+      }
+
+      /* costum icon */
+      .bi-diamond-icon::before {
+        display: inline-block;
+        content: "";
+        vertical-align: -0.125em;
+
+        /* GANTI BAGIAN INI */
+        background-image: url("assets/images/diamond.png"); /* Arahkan ke file PNG Anda */
+
+        /* Sesuaikan properti background lainnya */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */
+
+        /* Ukuran box untuk ikon tetap diperlukan */
+        width: 3rem;
+        height: 3rem;
+      }
+
+      /* costum icon */
+      .bi-pelayanan-icon::before {
+        display: inline-block;
+        content: "";
+        vertical-align: -0.125em;
+
+        /* GANTI BAGIAN INI */
+        background-image: url("assets/images/accountability.png"); /* Arahkan ke file PNG Anda */
+
+        /* Sesuaikan properti background lainnya */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */
+
+        /* Ukuran box untuk ikon tetap diperlukan */
+        width: 3rem;
+        height: 3rem;
+      }
     </style>
   </head>
   <body>
@@ -345,7 +421,7 @@
             >
               <div class="card h-100 border-0 advantage-card">
                 <div class="card-body p-4">
-                  <i class="bi bi-gem fs-1 text-primary"></i>
+                  <i class="bi bi-diamond-icon fs-1 text-primary"></i>
                   <h4 class="h5 my-3 fw-bold">Bahan Berkualitas</h4>
                   <p class="text-muted small">
                     Kami hanya menggunakan kain premium yang nyaman, awet, dan
@@ -362,7 +438,7 @@
             >
               <div class="card h-100 border-0 advantage-card">
                 <div class="card-body p-4">
-                  <i class="bi bi-palette fs-1 text-primary"></i>
+                  <i class="bi bi-custom-icon fs-1 text-primary"></i>
                   <h4 class="h5 my-3 fw-bold">Desain Eksklusif</h4>
                   <p class="text-muted small">
                     Tim desainer kami siap membantu Anda menciptakan seragam
@@ -379,7 +455,7 @@
             >
               <div class="card h-100 border-0 advantage-card">
                 <div class="card-body p-4">
-                  <i class="bi bi-clock-history fs-1 text-primary"></i>
+                  <i class="bi bi-clock-icon fs-1 text-primary"></i>
                   <h4 class="h5 my-3 fw-bold">Tepat Waktu</h4>
                   <p class="text-muted small">
                     Kami menghargai waktu Anda dengan komitmen produksi sesuai
@@ -396,7 +472,7 @@
             >
               <div class="card h-100 border-0 advantage-card">
                 <div class="card-body p-4">
-                  <i class="bi bi-person-check fs-1 text-primary"></i>
+                  <i class="bi bi-pelayanan-icon fs-1 text-primary"></i>
                   <h4 class="h5 my-3 fw-bold">Pelayanan Prima</h4>
                   <p class="text-muted small">
                     Kepuasan Anda adalah prioritas kami, dari konsultasi awal
