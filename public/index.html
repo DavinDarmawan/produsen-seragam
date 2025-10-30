@@ -81,15 +81,27 @@
         font-family: "Poppins", sans-serif;
       }
 
-      /* Gaya untuk Desktop (Default) */
       .hero-section {
-      min-height: calc(100vh - 56px);
+      /* Tinggi minimum elemen */
+      min-height: calc(100vh - 56px); 
+      
+      /* Gambar latar belakang dan gradien */
       background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
       url('assets/images/slide-1.jpg') no-repeat center center;
-      background-size: cover;
-      display: flex; /* Tambahkan ini untuk alignment vertikal */
-      align-items: center; /* Tambahkan ini untuk alignment vertikal */
-      justify-content: center; /* Tambahkan ini untuk alignment horizontal */
+      
+      /* >>> PERUBAHAN UTAMA DI SINI <<< */
+      /* Menggunakan 'contain' agar seluruh gambar terlihat, 
+         dan 'auto' untuk ukuran gradien.
+         Kita juga harus memisah background-size untuk gradien dan gambar. */
+      background-size: auto, contain; 
+      
+      /* Agar gambar latar belakang tidak diulang */
+      background-repeat: no-repeat, no-repeat;
+      
+      /* Menyelaraskan konten di dalam hero-section */
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
       }
 
 
