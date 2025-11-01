@@ -102,7 +102,6 @@
           left: 0 !important;
           right: 0 !important;
           z-index: 1030 !important; /* Prioritas tinggi */
-
         /* Tambahkan ini */
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
@@ -110,21 +109,17 @@
 
       .hero-section {
       /* Tinggi minimum elemen */
-      min-height: 100vh; 
-      
+      min-height: 100vh;     
       /* Gambar latar belakang dan gradien */
       background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url('assets/images/slide-1.jpg') no-repeat center center;
-      
+      url('assets/images/slide-1.jpg') no-repeat center center;    
       /* >>> PERUBAHAN UTAMA DI SINI <<< */
       /* Menggunakan 'contain' agar seluruh gambar terlihat, 
          dan 'auto' untuk ukuran gradien.
          Kita juga harus memisah background-size untuk gradien dan gambar. */
-      background-size: auto, contain; 
-      
+      background-size: auto, contain;      
       /* Agar gambar latar belakang tidak diulang */
       background-repeat: no-repeat, no-repeat;
-      
       /* Menyelaraskan konten di dalam hero-section */
       display: flex; 
       align-items: center; 
@@ -196,245 +191,245 @@
             opacity: 0.9;
         }
       
-      /* ======================= 
-      4. LAYANAN KAMI (MODEL BARU)
-      ======================= */
-      .service-card-new {
-        border: 3px solid #000000; /* Garis tepi ditebalkan menjadi 3px */
-        border-radius: 1.25rem; /* Sudut lebih bulat */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Bayangan yang sangat lembut */
-        transition: all 0.3s ease;
-        overflow: hidden; /* Tambahkan baris ini untuk memotong gambar yang keluar */
-      }
+        /* ======================= 
+        4. LAYANAN KAMI (MODEL BARU)
+        ======================= */
+        .service-card-new {
+          border: 3px solid #000000; /* Garis tepi ditebalkan menjadi 3px */
+          border-radius: 1.25rem; /* Sudut lebih bulat */
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Bayangan yang sangat lembut */
+          transition: all 0.3s ease;
+          overflow: hidden; /* Tambahkan baris ini untuk memotong gambar yang keluar */
+        }
 
-      .service-card-new:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Bayangan lebih jelas saat hover */
-        border-color: var(--bs-primary); /* Garis tepi menjadi oranye saat hover */
-      }
+        .service-card-new:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Bayangan lebih jelas saat hover */
+          border-color: var(--bs-primary); /* Garis tepi menjadi oranye saat hover */
+        }
 
-      .testimonial-img {
-        width: 60px;      /* Atur lebar gambar menjadi 60 pixel */
-        height: 60px;     /* Atur tinggi gambar menjadi 60 pixel */
-        object-fit: cover;/* Pastikan gambar tidak gepeng dan terpotong rapi */
-      }
-      
-      /* =================================
-      Latar Belakang Section Testimoni
-      ================================= */
-      .testimonial-bg {
-      /* Ganti URL dengan gambar latar Anda */
-        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-        url(assets/images/section-bg.jpg) repeat;
-        background-size: auto;
-        color: #ffffff; 
-      
-      /* Mengubah warna teks default di section ini menjadi putih */
-      }
+        .testimonial-img {
+          width: 60px;      /* Atur lebar gambar menjadi 60 pixel */
+          height: 60px;     /* Atur tinggi gambar menjadi 60 pixel */
+          object-fit: cover;/* Pastikan gambar tidak gepeng dan terpotong rapi */
+        }
+        
+        /* =================================
+        Latar Belakang Section Testimoni
+        ================================= */
+        .testimonial-bg {
+        /* Ganti URL dengan gambar latar Anda */
+          background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+          url(assets/images/section-bg.jpg) repeat;
+          background-size: auto;
+          color: #ffffff; 
+        
+        /* Mengubah warna teks default di section ini menjadi putih */
+        }
 
-      /* Mengubah warna judul dan deskripsi section menjadi putih agar terbaca */
-      /* Ganti dengan kode ini di style.css */
-      .testimonial-bg .fw-bold {
-        color: #000000 !important; /* Warna oranye untuk judul */
-      }
+        /* Mengubah warna judul dan deskripsi section menjadi putih agar terbaca */
+        /* Ganti dengan kode ini di style.css */
+        .testimonial-bg .fw-bold {
+          color: #000000 !important; /* Warna oranye untuk judul */
+        }
 
-      .testimonial-bg .text-muted {
-        color: #000000 !important; /* Warna putih pudar untuk deskripsi */
-      }
+        .testimonial-bg .text-muted {
+          color: #000000 !important; /* Warna putih pudar untuk deskripsi */
+        }
 
-      /* Mengubah warna judul "Apa Kata Klien Kami?" */
-      #testimoni h2 {
-        color: var(--bs-primary) !important; /* Diatur menjadi warna utama (oranye) */
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-      }
+        /* Mengubah warna judul "Apa Kata Klien Kami?" */
+        #testimoni h2 {
+          color: var(--bs-primary) !important; /* Diatur menjadi warna utama (oranye) */
+          text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
 
-      /* ======================= 
-      10. TOMBOL KUSTOM BARU
-       ======================= */
-      .btn-orange {
-        background-color: #ff6600;
-        border-color: #ff6600;
-        color: white;
-      }
+        /* ======================= 
+        10. TOMBOL KUSTOM BARU
+        ======================= */
+        .btn-orange {
+          background-color: #ff6600;
+          border-color: #ff6600;
+          color: white;
+        }
 
-      .btn-orange:hover {
-        background-color: #e65c00; /* Warna sedikit lebih gelap saat disentuh */
-        border-color: #e65c00;
-        color: white;
-      }
+        .btn-orange:hover {
+          background-color: #e65c00; /* Warna sedikit lebih gelap saat disentuh */
+          border-color: #e65c00;
+          color: white;
+        }
 
-      body {
-        overflow-x: hidden;
-      }
-      
-      /* Styling untuk Tombol WhatsApp Floating */
-      .whatsapp-floating-button {
-        /* Posisi */
-        position: fixed; /* Membuat elemen tetap di layar */
-        bottom: 25px; /* Jarak dari bawah layar */
-        right: 25px; /* Jarak dari kanan layar */
-        z-index: 1000; /* Memastikan tombol selalu di atas elemen lain */
+        body {
+          overflow-x: hidden;
+        }
+        
+        /* Styling untuk Tombol WhatsApp Floating */
+        .whatsapp-floating-button {
+          /* Posisi */
+          position: fixed; /* Membuat elemen tetap di layar */
+          bottom: 25px; /* Jarak dari bawah layar */
+          right: 25px; /* Jarak dari kanan layar */
+          z-index: 1000; /* Memastikan tombol selalu di atas elemen lain */
 
-        /* Tampilan Tombol */
-        background-color: #25D366; /* Warna hijau khas WhatsApp */
-        color: #ffffff; /* Warna teks dan ikon */
-        padding: 10px 18px;
-        border-radius: 50px; /* Membuat sudut menjadi bulat */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan agar terlihat 'melayang' */
-        text-decoration: none; /* Menghapus garis bawah pada link */
-        font-family: 'Arial', sans-serif;
-        font-size: 18px;
-        font-weight: bold;
+          /* Tampilan Tombol */
+          background-color: #25D366; /* Warna hijau khas WhatsApp */
+          color: #ffffff; /* Warna teks dan ikon */
+          padding: 10px 18px;
+          border-radius: 50px; /* Membuat sudut menjadi bulat */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan agar terlihat 'melayang' */
+          text-decoration: none; /* Menghapus garis bawah pada link */
+          font-family: 'Arial', sans-serif;
+          font-size: 18px;
+          font-weight: bold;
 
-        /* Layout Ikon dan Teks */
-        display: flex;
-        align-items: center;
-        gap: 10px; /* Jarak antara ikon dan teks */
+          /* Layout Ikon dan Teks */
+          display: flex;
+          align-items: center;
+          gap: 10px; /* Jarak antara ikon dan teks */
 
-        /* Efek Transisi */
-        transition: transform 0.2s ease-in-out;
-      }
+          /* Efek Transisi */
+          transition: transform 0.2s ease-in-out;
+        }
 
-      /* Efek saat kursor mouse di atas tombol */
-      .whatsapp-floating-button:hover {
-        transform: scale(1.05); /* Sedikit memperbesar tombol */
-        color: #ffffff;
-        background-color: #ff6600; /* Warna hijau lebih gelap saat hover */
-      }
+        /* Efek saat kursor mouse di atas tombol */
+        .whatsapp-floating-button:hover {
+          transform: scale(1.05); /* Sedikit memperbesar tombol */
+          color: #ffffff;
+          background-color: #ff6600; /* Warna hijau lebih gelap saat hover */
+        }
 
-      /* costum icon */
-      .bi-custom-icon::before {
-      display: inline-block;
-      content: "";
-      vertical-align: -.125em;
-      /* GANTI BAGIAN INI */
-      background-image: url('assets/images/tee-shirt.png'); /* Arahkan ke file PNG Anda */
-      /* Sesuaikan properti background lainnya */
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */      
-      /* Ukuran box untuk ikon tetap diperlukan */
-      width: 3rem;
-      height: 3rem;
-      }
-      
-      /* costum icon */
-      .bi-clock-icon::before {
-      display: inline-block;
-      content: "";
-      vertical-align: -.125em;
-      /* GANTI BAGIAN INI */
-      background-image: url('assets/images/clock.png'); /* Arahkan ke file PNG Anda */
-      /* Sesuaikan properti background lainnya */
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */     
-      /* Ukuran box untuk ikon tetap diperlukan */
-      width: 3rem;
-      height: 3rem;
-      }
+        /* costum icon */
+        .bi-custom-icon::before {
+        display: inline-block;
+        content: "";
+        vertical-align: -.125em;
+        /* GANTI BAGIAN INI */
+        background-image: url('assets/images/tee-shirt.png'); /* Arahkan ke file PNG Anda */
+        /* Sesuaikan properti background lainnya */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */      
+        /* Ukuran box untuk ikon tetap diperlukan */
+        width: 3rem;
+        height: 3rem;
+        }
+        
+        /* costum icon */
+        .bi-clock-icon::before {
+        display: inline-block;
+        content: "";
+        vertical-align: -.125em;
+        /* GANTI BAGIAN INI */
+        background-image: url('assets/images/clock.png'); /* Arahkan ke file PNG Anda */
+        /* Sesuaikan properti background lainnya */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */     
+        /* Ukuran box untuk ikon tetap diperlukan */
+        width: 3rem;
+        height: 3rem;
+        }
 
-            /* costum icon */
-      .bi-diamond-icon::before {
-      display: inline-block;
-      content: "";
-      vertical-align: -.125em;
-      /* GANTI BAGIAN INI */
-      background-image: url('assets/images/diamond.png'); /* Arahkan ke file PNG Anda */
-      /* Sesuaikan properti background lainnya */
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */      
-      /* Ukuran box untuk ikon tetap diperlukan */
-      width: 3rem;
-      height: 3rem;
-      }
+        /* costum icon */
+        .bi-diamond-icon::before {
+        display: inline-block;
+        content: "";
+        vertical-align: -.125em;
+        /* GANTI BAGIAN INI */
+        background-image: url('assets/images/diamond.png'); /* Arahkan ke file PNG Anda */
+        /* Sesuaikan properti background lainnya */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */      
+        /* Ukuran box untuk ikon tetap diperlukan */
+        width: 3rem;
+        height: 3rem;
+        }
 
-            /* costum icon */
-      .bi-pelayanan-icon::before {
-      display: inline-block;
-      content: "";
-      vertical-align: -.125em;
-      /* GANTI BAGIAN INI */
-      background-image: url('assets/images/accountability.png'); /* Arahkan ke file PNG Anda */
-      /* Sesuaikan properti background lainnya */
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */      
-      /* Ukuran box untuk ikon tetap diperlukan */
-      width: 3rem;
-      height: 3rem;
-      }
-      /* interval slider */
-      .carousel-item {
-        /* Defaultnya adalah 0.6s */
-        /* Ganti 1.5s dengan durasi yang Anda inginkan */
-        transition-duration: 1.5s;
-      }
+        /* costum icon */
+        .bi-pelayanan-icon::before {
+        display: inline-block;
+        content: "";
+        vertical-align: -.125em;
+        /* GANTI BAGIAN INI */
+        background-image: url('assets/images/accountability.png'); /* Arahkan ke file PNG Anda */
+        /* Sesuaikan properti background lainnya */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */      
+        /* Ukuran box untuk ikon tetap diperlukan */
+        width: 3rem;
+        height: 3rem;
+        }
+        /* interval slider */
+        .carousel-item {
+          /* Defaultnya adalah 0.6s */
+          /* Ganti 1.5s dengan durasi yang Anda inginkan */
+          transition-duration: 1.5s;
+        }
 
-      /* costum icon */
-      .bi-bag-icon::before {
-      display: inline-block;
-      content: "";
-      vertical-align: -.125em;
-      /* GANTI BAGIAN INI */
-      background-image: url('assets/images/school-bag.png'); /* Arahkan ke file PNG Anda */
-      /* Sesuaikan properti background lainnya */
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */      
-      /* Ukuran box untuk ikon tetap diperlukan */
-      width: 8rem;
-      height: 8rem;
-      }
+        /* costum icon */
+        .bi-bag-icon::before {
+        display: inline-block;
+        content: "";
+        vertical-align: -.125em;
+        /* GANTI BAGIAN INI */
+        background-image: url('assets/images/school-bag.png'); /* Arahkan ke file PNG Anda */
+        /* Sesuaikan properti background lainnya */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */      
+        /* Ukuran box untuk ikon tetap diperlukan */
+        width: 8rem;
+        height: 8rem;
+        }
 
-      /* costum icon */
-      .bi-hoodie-icon::before {
-      display: inline-block;
-      content: "";
-      vertical-align: -.125em;
-      /* GANTI BAGIAN INI */
-      background-image: url('assets/images/hoodie.png'); /* Arahkan ke file PNG Anda */
-      /* Sesuaikan properti background lainnya */
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */      
-      /* Ukuran box untuk ikon tetap diperlukan */
-      width: 8rem;
-      height: 8rem;
-      }
+        /* costum icon */
+        .bi-hoodie-icon::before {
+        display: inline-block;
+        content: "";
+        vertical-align: -.125em;
+        /* GANTI BAGIAN INI */
+        background-image: url('assets/images/hoodie.png'); /* Arahkan ke file PNG Anda */
+        /* Sesuaikan properti background lainnya */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */      
+        /* Ukuran box untuk ikon tetap diperlukan */
+        width: 8rem;
+        height: 8rem;
+        }
 
-      /* costum icon */
-      .bi-sneakers-icon::before {
-      display: inline-block;
-      content: "";
-      vertical-align: -.125em;
-      /* GANTI BAGIAN INI */
-      background-image: url('assets/images/sneakers.png'); /* Arahkan ke file PNG Anda */
-      /* Sesuaikan properti background lainnya */
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */    
-      /* Ukuran box untuk ikon tetap diperlukan */
-      width: 8em;
-      height: 8rem;
-      }
+        /* costum icon */
+        .bi-sneakers-icon::before {
+        display: inline-block;
+        content: "";
+        vertical-align: -.125em;
+        /* GANTI BAGIAN INI */
+        background-image: url('assets/images/sneakers.png'); /* Arahkan ke file PNG Anda */
+        /* Sesuaikan properti background lainnya */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */    
+        /* Ukuran box untuk ikon tetap diperlukan */
+        width: 8em;
+        height: 8rem;
+        }
 
-      /* costum icon */
-      .bi-kemeja-icon::before {
-      display: inline-block;
-      content: "";
-      vertical-align: -.125em;
-      /* GANTI BAGIAN INI */
-      background-image: url('assets/images/tee-shirt.png'); /* Arahkan ke file PNG Anda */
-      /* Sesuaikan properti background lainnya */
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */
-      /* Ukuran box untuk ikon tetap diperlukan */
-      width: 8rem;
-      height: 8rem;
-      }
+        /* costum icon */
+        .bi-kemeja-icon::before {
+        display: inline-block;
+        content: "";
+        vertical-align: -.125em;
+        /* GANTI BAGIAN INI */
+        background-image: url('assets/images/tee-shirt.png'); /* Arahkan ke file PNG Anda */
+        /* Sesuaikan properti background lainnya */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain; /* 'contain' biasanya pilihan terbaik untuk PNG */
+        /* Ukuran box untuk ikon tetap diperlukan */
+        width: 8rem;
+        height: 8rem;
+        }
 
     </style>
   </head>
