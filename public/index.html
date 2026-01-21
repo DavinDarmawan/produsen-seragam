@@ -24,6 +24,8 @@
     <meta property="og:image" content="https://produsen-seragam.vercel.app/assets/images/og-image.jpg" />
     <meta property="og:url" content="https://produsen-seragam.vercel.app/" />
     <meta property="og:type" content="website" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://produsen-seragam.vercel.app/" />
     <!-- ============================================================= -->
 
     <!-- Favicon link -->
@@ -108,22 +110,22 @@
       }
 
       .hero-section {
-      /* Tinggi minimum elemen */
-      min-height: 100vh;     
-      /* Gambar latar belakang dan gradien */
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url('assets/images/slide-1.jpg') no-repeat center center;    
-      /* >>> PERUBAHAN UTAMA DI SINI <<< */
-      /* Menggunakan 'contain' agar seluruh gambar terlihat, 
-         dan 'auto' untuk ukuran gradien.
-         Kita juga harus memisah background-size untuk gradien dan gambar. */
-      background-size: auto, contain;      
-      /* Agar gambar latar belakang tidak diulang */
-      background-repeat: no-repeat, no-repeat;
-      /* Menyelaraskan konten di dalam hero-section */
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
+        position: relative;
+        overflow: hidden;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #heroCanvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        z-index: 0;
       }
 
 
@@ -139,19 +141,16 @@
       }
 
       /* CSS Kustom untuk Kartu Portofolio */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .portfolio-card {
-            display: block; /* Changed to block for h-100 to work correctly */
-            position: relative;
-            overflow: hidden;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%; /* Make card fill the column height */
-        }
+      .portfolio-card {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 100%;
+        min-height: 380px;
+      }
         
         .portfolio-card:hover {
             transform: translateY(-5px);
@@ -159,12 +158,13 @@
         }
 
         .portfolio-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Changed back to 'cover' to ensure the image fills the card */
-            display: block;
-            transition: transform 0.4s ease;
-        }
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+        transition: transform 0.4s ease;
+      }
         
         .portfolio-card:hover img {
             transform: scale(1.05);
@@ -189,6 +189,49 @@
         .portfolio-card-content p {
             margin: 0;
             opacity: 0.9;
+        }
+
+        /* ======================= 
+        Semicircle Background untuk KEUNGGULAN & LAYANAN
+        ======================= */
+        #keunggulan::before {
+          content: '';
+          position: absolute;
+          left: -350px;
+          top: 40%;
+          width: 700px;
+          height: 700px;
+          background-color: #ff6600;
+          border-radius: 0 700px 700px 0;
+          opacity: 0.28;
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        #layanan::before {
+          content: '';
+          position: absolute;
+          left: -350px;
+          top: 55%;
+          width: 700px;
+          height: 700px;
+          background-color: #ff6600;
+          border-radius: 0 700px 700px 0;
+          opacity: 0.28;
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        #keunggulan,
+        #layanan {
+          position: relative;
+          overflow: visible;
+        }
+
+        #keunggulan > .container,
+        #layanan > .container {
+          position: relative;
+          z-index: 1;
         }
       
         /* ======================= 
@@ -523,9 +566,10 @@
     <main>
       <!-- ======================= HERO SECTION ======================= -->
       <header
-        class="hero-section d-flex align-items-center text-white text-center" 
+        class="hero-section d-flex align-items-center text-white text-center"
       >
-        <div class="container">
+        <canvas id="heroCanvas" aria-hidden="true"></canvas>
+        <div class="container position-relative" style="z-index: 1;">
           <h1 class="display-4 fw-bold mb-3" data-aos="fade-down">
             ADR Seragam Terbaik, Mutu Terjamin, Sahabat Seragam Anda
           </h1>
@@ -535,20 +579,20 @@
           <a href="portofolio.html" class="btn btn-orange btn-lg mx-2 my-2" data-aos="fade-down" data-aos-delay="200" 
             >Lihat Portofolio</a
           >
-          <a href="https://wa.me/+6288385082674" class="btn btn-light btn-lg mx-2 my-2" data-aos="fade-down" data-aos-delay="200" 
+          <a href="https://wa.me/628385082674" class="btn btn-light btn-lg mx-2 my-2" data-aos="fade-down" data-aos-delay="200" 
             >Konsultasi Gratis</a
           >
         </div>
       </header>
 
       <!-- button wa -->
-      <a href="https://wa.me/628385082674?text=Halo,%20saya%20tertarik%20dengan%20produk%20Anda." class="whatsapp-floating-button" target="_blank">
+      <a href="https://wa.me/628385082674?text=Halo,%20saya%20tertarik%20dengan%20produk%20Anda." class="whatsapp-floating-button" target="_blank" aria-label="Chat dengan admin di WhatsApp">
       <i class="fab fa-whatsapp"></i>
       <span>Chat Admin</span>
       </a>
 
       <!-- ======================= KEUNGGULAN KAMI ======================= -->
-      <section id="keunggulan" class="py-5">
+      <section id="keunggulan" class="py-5 bg-white">
         <div class="container" >
           <div class="text-center mb-5" data-aos="fade-down" data-aos-delay="400">
             <h2 class="fw-bold text-primary">KEUNGGULAN KAMI</h2>
@@ -615,7 +659,7 @@
     </main>
 
     <!-- ======= layanan kami ======= -->
-    <section id="layanan" class="py-5">
+    <section id="layanan" class="py-5" style="background: linear-gradient(135deg, #ffffff 0%, #ffffff 48%, rgba(255, 166, 0, 0.08) 48%, rgba(255, 166, 0, 0.08) 50%, #ffffff 50%, #ffffff 100%); background-size: 40px 40px; background-attachment: fixed;">
       <div class="container">
         <div class="row align-items-center g-5">
           <div class="col-lg-5" data-aos="fade-down">
@@ -689,7 +733,7 @@
           <!-- sekolah -->
           <div class="col">
               <a href="portofolio.html#Seragam" class="portfolio-card" data-aos="zoom-in" data-aos-delay="300">
-                  <img src="assets/images/prot_seragam_7.png" alt="Jaket Baseball" class="img-fluid">
+                  <img src="assets/images/prot_seragam_7.png" alt="Seragam Sekolah" loading="lazy">
                   <div class="portfolio-card-content">
                       <h5>Seragam Sekolah</h5>
                       <p>Seragam Sekolah</p>
@@ -699,7 +743,7 @@
           <!-- perusahaan -->
           <div class="col">
               <a href="portofolio.html#Kemeja" class="portfolio-card" data-aos="zoom-in" data-aos-delay="400">
-                  <img src="assets/images/prot_kemeja_1.png" alt="Seragam Industri Custom" class="img-fluid">
+                  <img src="assets/images/prot_kemeja_1.png" alt="Seragam Perusahaan" loading="lazy">
                   <div class="portfolio-card-content">
                       <h5>Seragam Perusahaan</h5>
                       <p>Seragam Perusahaan</p>
@@ -709,7 +753,7 @@
           <!-- komunitas -->
           <div class="col">
               <a href="portofolio.html#Komunitas" class="portfolio-card" data-aos="zoom-in">
-                  <img src="assets/images/prot_seragam_9.png" alt="Kemeja Bordir Custom" class="img-fluid">
+                  <img src="assets/images/prot_seragam_9.png" alt="Seragam Komunitas" loading="lazy">
                   <div class="portfolio-card-content">
                       <h5>Seragam Komunitas</h5>
                       <p>Seragam Komunitas</p>
@@ -719,7 +763,7 @@
           <!-- jaket -->
           <div class="col">
               <a href="portofolio.html#Jaket" class="portfolio-card" data-aos="zoom-in" data-aos-delay="100">
-                  <img src="assets/images/prot_jaket_1.png" alt="Jaket Bomber Custom" class="img-fluid">
+                  <img src="assets/images/prot_jaket_1.png" alt="Jaket dan Outwear" loading="lazy">
                   <div class="portfolio-card-content">
                       <h5>Jaket & Outwear</h5>
                       <p>Jaket & Outwear</p>
@@ -729,7 +773,7 @@
           <!-- aksesoris -->
           <div class="col">
               <a href="portofolio.html#Aksesoris" class="portfolio-card" data-aos="zoom-in" data-aos-delay="200">
-                  <img src="assets/images/prot_aksesoris_1​.jpg" alt="Blazer Wanita Custom" class="img-fluid">
+                  <img src="assets/images/prot_aksesoris_1​.jpg" alt="Pelengkapan dan Aksesoris" loading="lazy">
                   <div class="portfolio-card-content">
                       <h5>Pelengkapan & Aksesoris</h5>
                       <p>Pelengkapan & Aksesoris</p>
@@ -739,7 +783,7 @@
           <!-- shoes -->
           <div class="col">
               <a href="portofolio.html#Shoes" class="portfolio-card" data-aos="zoom-in" data-aos-delay="300">
-                  <img src="assets/images/prot_shoes_1.jpg" alt="Jaket Baseball" class="img-fluid">
+                  <img src="assets/images/prot_shoes_1.jpg" alt="Sepatu dan Kaos Kaki" loading="lazy">
                   <div class="portfolio-card-content">
                       <h5>Sock & Shoes</h5>
                       <p>Sock & Shoes</p>
@@ -768,7 +812,8 @@
                   <img
                     src="assets/images/testi-1.jpg"
                     class="rounded-circle testimonial-img"
-                    alt="Bapak Abdullah"
+                    alt="Ahdhiana - Purjam Owner"
+                    loading="lazy"
                   />
                   <div class="ms-3">
                     <h5 class="mb-0 fw-bold">Ahdhiana</h5>
@@ -791,7 +836,8 @@
                   <img
                     src="assets/images/testi-2.jpg"
                     class="rounded-circle testimonial-img"
-                    alt="Bapak Abdullah"
+                    alt="Nurlela - Khafa Aparel Owner"
+                    loading="lazy"
                   />
                   <div class="ms-3">
                     <h5 class="mb-0 fw-bold">Nurlela</h5>
@@ -814,7 +860,8 @@
                   <img
                     src="assets/images/testi-3.jpg"
                     class="rounded-circle testimonial-img"
-                    alt="Bapak Abdullah"
+                    alt="Pak Khaerudin - SDIT Bina Umat Buru Maluku"
+                    loading="lazy"
                   />
                   <div class="ms-3">
                     <h5 class="mb-0 fw-bold">Pak Khaerudin</h5>
@@ -882,6 +929,7 @@
                 <div class="d-flex align-items-center mt-4">
                   <img
                     src="assets/images/testi-6.jpg"
+                    loading="lazy"
                     class="rounded-circle testimonial-img"
                     alt="Ibu Sarah Lidia"
                   />
@@ -912,7 +960,8 @@
               <img
                 src="assets/images/blog-4.png"
                 class="card-img-top"
-                alt="Tips Memilih Bahan"
+                alt="Branding Perusahaan - Manfaat Psikologis Seragam"
+                loading="lazy"
               />
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title fw-bold">
@@ -936,7 +985,8 @@
             <div class="card h-100 border-0 shadow-sm blog-card">
               <img
                 src="assets/images/blog-1.png"
-                class="card-img-top"
+                class="card-img-top" Seragam yang Nyaman"
+                loading="lazy
                 alt="Tips Memilih Bahan"
               />
               <div class="card-body d-flex flex-column">
@@ -959,6 +1009,7 @@
             <div class="card h-100 border-0 shadow-sm blog-card">
               <img
                 src="assets/images/blog-2.png"
+                loading="lazy-2.png"
                 class="card-img-top"
                 alt="Tren Warna Seragam"
               />
@@ -991,7 +1042,7 @@
             Diskusikan kebutuhan seragam Anda dengan tim kami. Dapatkan
             penawaran terbaik hari ini!
           </p>
-          <a href="https://wa.me/+6288385082674" class="btn btn-light btn-lg"
+          <a href="https://wa.me/628385082674" class="btn btn-light btn-lg"
             >Hubungi Kami Sekarang</a
           >
         </div>
@@ -1057,6 +1108,7 @@
                 href="https://wa.me/628385082674"
                 target="_blank"
                 class="text-white text-decoration-none"
+                aria-label="Hubungi kami di WhatsApp"
               >
                 <i class="bi bi-whatsapp me-3"></i>+62 838-5082-674
               </a>
@@ -1098,6 +1150,8 @@
           once: true // Animasi hanya terjadi sekali
       });
     </script>
+
+    <script src="assets/js/hero-animation.js"></script>
 
     <script>
       // Script sederhana untuk menampilkan tahun sekarang di footer secara otomatis
